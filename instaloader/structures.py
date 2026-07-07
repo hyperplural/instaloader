@@ -1031,7 +1031,7 @@ class Profile:
         if profile_id in context.profile_id_cache:
             return context.profile_id_cache[profile_id]
         resp = context.doc_id_graphql_query(
-            '26672929172408668',
+            '27937681195819736',
             {
                 "enable_integrity_filters": True,
                 "id": str(profile_id),
@@ -1097,8 +1097,10 @@ class Profile:
                     "__relay_internal__pv__PolarisCASB976ProfileEnabledrelayprovider": False,
                     "__relay_internal__pv__PolarisWebSchoolsEnabledrelayprovider": False,
                     "__relay_internal__pv__PolarisRepostsConsumptionEnabledrelayprovider": False,
+                    "__relay_internal__pv__PolarisWebSchoolsEnabledrelayprovider": False,
+                    "enable_integrity_filters": True,
                 }
-                data = self._context.doc_id_graphql_query('26672929172408668', variables)
+                data = self._context.doc_id_graphql_query('27937681195819736', variables)
                 if data is None:
                     raise QueryReturnedNotFoundException('GraphQL query returned None')
                 user_data = data.get('data', {}).get('user')
