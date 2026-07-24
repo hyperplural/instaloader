@@ -1072,12 +1072,13 @@ class Profile:
             if not self._has_full_metadata:
                 user_id = self._node.get('id') or self._node.get('pk')
                 variables = {
-                    "enable_integrity_filters": True,
                     "id": str(user_id),
+                    "render_surface": "PROFILE",
                     "__relay_internal__pv__PolarisCannesGuardianExperienceEnabledrelayprovider": True,
                     "__relay_internal__pv__PolarisCASB976ProfileEnabledrelayprovider": False,
-                    "__relay_internal__pv__PolarisWebSchoolsEnabledrelayprovider": False,
                     "__relay_internal__pv__PolarisRepostsConsumptionEnabledrelayprovider": False,
+                    "__relay_internal__pv__PolarisWebSchoolsEnabledrelayprovider": False,
+                    "enable_integrity_filters": True,
                 }
                 data = self._context.doc_id_graphql_query('27937681195819736', variables)
                 if data is None:
